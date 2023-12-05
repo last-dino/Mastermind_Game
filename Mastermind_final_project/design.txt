@@ -1,0 +1,26 @@
+Overview
+    This project implements a digital version of the board game Mastermind. In this game, the player needs to guess 4
+colors out of 6 colors and their correct positions (no empty color or repetition allowed). The amount of guess allowed
+is set to 10, and player has the option to reset a guess or quit the game, apart from submitting a guess. There are
+several modules in this project, includes the main logic file, helper functions, classes, and testing suite.
+
+Design and Components:
+    The design of this project is focused on object-oriented programming for modularity and separation of concerns. Run
+'mastermind_game.py' to play the game. It's the file that handles the main logic.
+    There are three classes that handles the major components of the game: 'GuessBoard.py' handles the display of all
+the guesses and the mechanics of the control buttons, 'BullsAndCows.py' handles the bulls and cows display for all the
+guesses, and 'Button.py' creates all the controls on the control panel.
+    The functions purely for graphical display are in 'GUI.py' There are also several classes in the project that focus
+on the graphical display: 'Point.py' is a simple class that returns a position, 'Shape.py' is a parent class for all
+three following shapes, 'Marble.py' creates the circles and handles its methods, 'Board.py' creates the rectangle
+borders, 'Arrow.py' crates the arrow pointing to the current guess.
+    In addition, there is 'log_error.py' for error logging and 'test_mastermind_game.py' for testing.
+
+Test Suite
+    For the testing modular, there are three types of tests to test the count of bulls(correct color/correct placement)
+and cows(correct color/incorrect placement). The first one tests the count for bulls, the second tests the count for
+cows, and the third tests for both together.
+    For each test, there is given test data for a "secret guess" and a "simulated user guess". The test checks the
+'count_bulls_and_cows' function to ensure the game will check a guess correctly. Inside the function, a method of the
+'BullsAndCows' instance 'checker' is called to pass in the count of bulls and cows. The test uses the mock class to mock
+the creation of the graphical representation of bulls and cows.
